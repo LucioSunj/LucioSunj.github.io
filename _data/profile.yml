@@ -1,0 +1,36 @@
+name:
+  en: "Jun Sun"
+  zh: "孙俊"
+tagline:
+  en: "Research Assistant, School of Robotics and Automation, Nanjing University"
+  zh: "南京大学 机器人与自动化学院 研究助理"
+affiliation_url: "https://ra.nju.edu.cn/"
+# NOTE: Chinese text is kept on one line on purpose — YAML folded blocks (>)
+# insert a space at every line break, which shows up as a gap in CJK text.
+bio:
+  en: >
+    I work on <strong>world action models</strong> and <strong>reinforcement learning</strong> for
+    robot manipulation — how a policy should represent what will happen next, when it is worth
+    spending compute to imagine the future, and how predictive representations turn into reliable
+    long-horizon action.
+  zh: "我的研究方向是机器人操作中的<strong>世界-动作模型（world action model）</strong>与<strong>强化学习</strong>——策略应当如何表征“接下来会发生什么”，何时值得花费算力去预测未来，以及预测性表征如何转化为稳定可靠的长程操作。"
+bio2:
+  en: >
+    I am a Research Assistant in
+    <a href="https://lsk-robot.github.io/">Prof. Shangke Lyu</a>'s group at the
+    <a href="https://ra.nju.edu.cn/">School of Robotics and Automation, Nanjing University</a>.
+    Before that I built training-free temporal memory for vision-language-action policies
+    (<em>TempoFit</em>, IROS 2026), depth-grounded VLA pretraining, and spent a summer at
+    Westlake Robotics working on real-robot deformable-object manipulation.
+    I received my BSc in Information and Computing Science from
+    Xi'an Jiaotong-Liverpool University in 2026.
+  zh: "我目前在<a href=\"https://ra.nju.edu.cn/\">南京大学机器人与自动化学院</a> <a href=\"https://lsk-robot.github.io/\">吕尚可</a> 老师组内担任研究助理。此前的工作包括：为视觉-语言-动作（VLA）策略设计免训练的时序记忆（<em>TempoFit</em>，IROS 2026）、面向深度感知的 VLA 预训练，以及在西湖机器人（Westlake Robotics）参与真机可形变物体操作。2026 年本科毕业于西交利物浦大学信息与计算科学专业。"
+interests:
+  - en: "World action models &amp; predictive representations for manipulation"
+    zh: "世界-动作模型与面向操作的预测性表征"
+  - en: "Reinforcement learning and adaptive computation for embodied agents"
+    zh: "具身智能体的强化学习与自适应计算"
+  - en: "Vision-Language-Action policies for long-horizon manipulation"
+    zh: "面向长程操作的视觉-语言-动作策略"
+  - en: "Real-robot learning: data pipelines, sim-to-real, deployment"
+    zh: "真机学习：数据流水线、Sim-to-Real 与部署"

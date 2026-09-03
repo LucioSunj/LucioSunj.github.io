@@ -1,0 +1,29 @@
+# Professional experience (internships / employment). Newest first.
+- sort_key: "2025-06"
+  role:
+    en: "Algorithm R&D Intern"
+    zh: "算法研发部 实习生"
+  org:
+    en: "Westlake Robotics"
+    zh: "西湖机器人"
+  org_url: ""
+  location:
+    en: "Hangzhou, China"
+    zh: "中国 杭州"
+  period:
+    en: "2025.06 – 2025.10"
+    zh: "2025.06 – 2025.10"
+  summary:
+    en: >
+      Deformable-object manipulation is hard because object state changes continuously, observations
+      are partial and occluded, and small perception errors compound into unstable long-horizon action.
+    zh: "可形变物体操作的难点在于：物体状态连续变化、观测局部且易被遮挡，而微小的感知误差会在长程执行中不断累积，放大为不稳定的动作。"
+  bullets:
+    - en: "<strong>Task design &amp; evaluation:</strong> designed real-robot protocols for folding, unfolding and stacking, with quantitative metrics for perception–action decision quality."
+      zh: "<strong>任务设计与评测：</strong>设计折叠、展开、堆叠等真机实验协议，并建立量化指标衡量感知—动作决策质量。"
+    - en: "<strong>Real-robot data &amp; training:</strong> led real-robot data collection and processing; fine-tuned on physical robot data and ran large-scale pretraining across tasks and embodiments to improve transferability."
+      zh: "<strong>真机数据与训练：</strong>主导真机数据采集与处理，基于真机数据微调模型，并跨任务、跨本体做大规模预训练以提升迁移能力。"
+    - en: "<strong>End-to-end pipeline:</strong> built the annotation → conversion → training → online inference pipeline; improved deployability with distributed training and inference optimisation."
+      zh: "<strong>端到端流水线：</strong>搭建标注、数据转换、模型训练到在线推理的完整链路，并通过分布式训练与推理优化提升可部署性。"
+    - en: "<strong>System integration:</strong> delivered a dexterous-hand towel-folding demo and led dual-arm long-horizon garment folding — the first team in China (after Figure) to demonstrate real-robot dexterous towel folding on a physical platform."
+      zh: "<strong>系统集成：</strong>完成灵巧手叠毛巾 demo，并主导双臂长程叠衣任务；为国内首个（继 Figure 之后）在真实机器人平台上实现灵巧手叠毛巾的团队。"

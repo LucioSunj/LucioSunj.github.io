@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign t = site.data.i18n[page.lang] %}
+
+<h1 style="font-family:var(--serif);font-size:1.9rem;margin:0 0 2rem;">{{ t.s_pubs_all }}</h1>
+
+{% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+{% for y in years %}
+<section>
+  <h2>{{ y }}</h2>
+  {% for pub in site.data.publications %}{% if pub.year == y %}{% include publication.html %}{% endif %}{% endfor %}
+</section>
+{% endfor %}

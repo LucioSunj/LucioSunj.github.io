@@ -1,0 +1,10 @@
+---
+layout: default
+lang: en
+title: "404"
+permalink: /404.html
+alt_url: /zh/
+---
+{% assign t = site.data.i18n[page.lang] %}
+<h1 style="font-family:var(--serif);font-size:1.9rem;">{{ t.not_found }}</h1>
+<p>{{ t.not_found_body }} <a href="/">&larr; Home</a></p>

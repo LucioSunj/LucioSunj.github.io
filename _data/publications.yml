@@ -1,0 +1,46 @@
+# Newest first. `selected: true` puts the paper on the homepage.
+- title:
+    en: "TempoFit: Plug-and-Play Layer-Wise Temporal KV Memory for Long-Horizon Vision-Language-Action Manipulation"
+    zh: "TempoFit：面向长程视觉-语言-动作操作的即插即用逐层时序 KV 记忆"
+  authors: "J. Sun, B. Yang, J. Zhang, N. Ma, C. Wu, S. Zhang, Y. Huang, Q. Wang, S. Liang, Y. Chen"
+  venue:
+    en: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026"
+    zh: "IEEE/RSJ 国际智能机器人与系统会议 (IROS), 2026"
+  short_venue: "IROS 2026"
+  year: 2026
+  selected: true
+  tldr:
+    en: >
+      A training-free retrofit that gives frozen VLA policies history awareness by caching
+      intermediate-layer prefix K/V states — no parameter change, no longer inputs.
+      +4.0 points on LIBERO-Long with π0.5, and up to +14.2% full-task success on a real Realman RM-65B.
+    zh: "一种免训练的改造方法：通过缓存中间层前缀 K/V 状态，让冻结的 VLA 策略获得历史感知能力，既不改动参数也不加长输入。在 LIBERO-Long 上使 π0.5 提升 4.0 个百分点，真机 Realman RM-65B 上整任务成功率最高提升 14.2%。"
+  links:
+    - label: {en: "arXiv", zh: "arXiv"}
+      url: "https://arxiv.org/abs/2603.07647"
+
+- title:
+    en: "Force-Aware Residual DAgger via Trajectory Editing for Precision Insertion with Impedance Control"
+    zh: "基于轨迹编辑的力感知残差 DAgger：阻抗控制下的精密插装"
+  authors: "Y. Huang, N. Ma, W. Zhao, Z. Liu, J. Sun, Q. Wang, Y. Chen"
+  venue:
+    en: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026"
+    zh: "IEEE/RSJ 国际智能机器人与系统会议 (IROS), 2026"
+  short_venue: "IROS 2026"
+  year: 2026
+  selected: true
+  links:
+    - label: {en: "arXiv", zh: "arXiv"}
+      url: "https://arxiv.org/abs/2603.04038"
+
+- title:
+    en: "MiTPose: Multi-Granularity Guided Vision Transformer for Human Pose Estimation"
+    zh: "MiTPose：面向人体姿态估计的多粒度引导视觉 Transformer"
+  authors: "Y. Wu, Q. Gao, Y. Liu, J. Sun, Z. Li, Y. Jin, Y. Yue, X. Zhu"
+  venue:
+    en: "IEEE International Conference on Industrial Informatics (INDIN), 2025"
+    zh: "IEEE 国际工业信息学会议 (INDIN), 2025"
+  short_venue: "INDIN 2025"
+  year: 2025
+  selected: false
+  links: []

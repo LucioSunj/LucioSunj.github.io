@@ -1,0 +1,24 @@
+- label:
+    en: "Programming &amp; ML"
+    zh: "编程与机器学习"
+  value:
+    en: "Python, Java, PyTorch, JAX"
+    zh: "Python、Java、PyTorch、JAX"
+- label:
+    en: "Embodied AI &amp; Robotics"
+    zh: "具身智能与机器人"
+  value:
+    en: "Vision-Language-Action models (Octo, OpenVLA, π0), world action models, reinforcement learning"
+    zh: "视觉-语言-动作模型（Octo、OpenVLA、π0）、世界-动作模型、强化学习"
+- label:
+    en: "Mathematics"
+    zh: "数学基础"
+  value:
+    en: "Calculus, linear algebra, probability theory"
+    zh: "微积分、线性代数、概率论"
+- label:
+    en: "Languages"
+    zh: "语言"
+  value:
+    en: "Chinese (native), English (fluent, IELTS 7.5), Spanish (fluent)"
+    zh: "中文（母语）、英语（流利，雅思 7.5）、西班牙语（流利）"

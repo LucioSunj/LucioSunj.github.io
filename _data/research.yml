@@ -1,0 +1,112 @@
+# Research experience. Newest first; `sort_key` merges this with experience.yml on the homepage.
+- sort_key: "2026-03"
+  current: true
+  title:
+    en: "World Action Models and Reinforcement Learning for Robot Manipulation"
+    zh: "机器人操作中的世界-动作模型与强化学习"
+  role:
+    en: "Research Assistant"
+    zh: "研究助理"
+  org:
+    en: "School of Robotics and Automation, Nanjing University"
+    zh: "南京大学 机器人与自动化学院"
+  org_url: "https://ra.nju.edu.cn/"
+  advisor:
+    en: "Prof. Shangke Lyu"
+    zh: "吕尚可 教授"
+  advisor_url: "https://lsk-robot.github.io/"
+  period:
+    en: "2026.03 – Present"
+    zh: "2026.03 – 至今"
+  bullets:
+    - en: "Research on world action models and reinforcement learning for robot manipulation: how a policy represents future state, and how it allocates that prediction over a long horizon."
+      zh: "围绕机器人操作的世界-动作模型与强化学习开展研究：策略如何表征未来状态，以及在长程任务中如何分配这类预测能力。"
+
+- sort_key: "2025-11"
+  title:
+    en: "TempoFit: Training-Free Temporal KV Memory for Long-Horizon Vision-Language-Action Manipulation"
+    zh: "TempoFit：面向长程视觉-语言-动作操作的免训练时序 KV 记忆"
+  role:
+    en: "Research Assistant"
+    zh: "研究助理"
+  org: {en: "", zh: ""}
+  advisor:
+    en: "Prof. Yaran Chen"
+    zh: "陈亚冉 教授"
+  advisor_url: ""
+  period:
+    en: "2025.11 – 2026.03"
+    zh: "2025.11 – 2026.03"
+  summary:
+    en: >
+      Memoryless VLA policies struggle over long horizons under occlusion, state aliasing and subtle
+      post-action changes — which calls for efficient temporal reasoning without retraining or
+      architectural surgery.
+    zh: "无记忆的 VLA 策略在长程任务中会受遮挡、状态混淆与动作后细微变化的困扰，因此需要一种无需重训练、也不改动架构的高效时序推理机制。"
+  bullets:
+    - en: "<strong>Temporal memory design:</strong> proposed TempoFit, a training-free retrofit that equips frozen VLA policies with history awareness by caching intermediate-layer prefix K/V states, leaving parameters and input length untouched."
+      zh: "<strong>时序记忆设计：</strong>提出 TempoFit——一种免训练的改造方案，通过缓存中间层前缀 K/V 状态为冻结的 VLA 策略引入历史感知，且不改变参数与输入长度。"
+    - en: "<strong>Retrieval &amp; fusion:</strong> developed K-to-K retrieval with a frame-gap temporal bias and norm-preserving residual loading, suppressing stale context and minimising distribution shift under frozen weights."
+      zh: "<strong>检索与融合：</strong>设计带帧间隔时序偏置的 K-to-K 检索与保范残差加载，抑制过时上下文并在冻结权重下最小化分布偏移。"
+    - en: "<strong>Benchmarks:</strong> LIBERO-Long success from 92.6% to 96.6% on π0.5 and 90.8% to 94.4% on QwenGR00T, with consistent gains on CALVIN."
+      zh: "<strong>基准结果：</strong>LIBERO-Long 上 π0.5 从 92.6% 提升至 96.6%，QwenGR00T 从 90.8% 提升至 94.4%，在 CALVIN 上同样稳定提升。"
+    - en: "<strong>Real-robot validation:</strong> validated on a Realman RM-65B across three multi-stage tasks, raising full-task success by up to 14.2% with minor latency and memory overhead."
+      zh: "<strong>真机验证：</strong>在 Realman RM-65B 上完成三个多阶段任务验证，整任务成功率最高提升 14.2%，延迟与显存开销增加有限。"
+
+- sort_key: "2025-01"
+  title:
+    en: "Multimodal Embodied Intelligence with the Octo Framework and 3D Depth Perception"
+    zh: "基于 Octo 框架与三维深度感知的多模态具身智能模型训练"
+  role:
+    en: "Research Assistant"
+    zh: "研究助理"
+  org: {en: "", zh: ""}
+  advisor:
+    en: "Prof. Yaran Chen"
+    zh: "陈亚冉 教授"
+  advisor_url: ""
+  period:
+    en: "2025.01 – 2025.06"
+    zh: "2025.01 – 2025.06"
+  summary:
+    en: >
+      Language-guided manipulation is limited by RGB-only geometric ambiguity, occlusion and
+      sim-to-real shift; robust VLA needs explicit 3D grounding for stable grasping decisions.
+    zh: "仅依赖 RGB 的语言引导操作会受几何歧义、遮挡与 Sim-to-Real 偏移的限制；鲁棒的 VLA 需要显式的三维信息来支撑稳定的抓取决策。"
+  bullets:
+    - en: "<strong>Depth-aware fusion:</strong> added a monocular-depth stream for multi-scale geometric features, aligned to Octo embeddings and injected via gated cross-attention with FiLM modulation — without modifying the core Octo VLA architecture."
+      zh: "<strong>深度感知融合：</strong>引入单目深度分支提取多尺度几何特征，与 Octo 表征对齐，并通过带 FiLM 调制的门控交叉注意力注入，未改动 Octo VLA 主体架构。"
+    - en: "<strong>Dataset construction:</strong> extended Bridge by generating monocular depth from RGB sequences into an RGB–Depth–Language corpus; collected teleoperated RGB-D real-robot data for fine-tuning and sim-to-real alignment."
+      zh: "<strong>数据集构建：</strong>基于 RGB 序列生成单目深度扩展 Bridge，构建 RGB–深度–语言语料，并采集遥操作真机 RGB-D 数据用于微调与 Sim-to-Real 对齐。"
+    - en: "<strong>Training &amp; evaluation:</strong> behaviour cloning plus RL fine-tuning lifted unseen-object grasping success from ~77% to ~89%; robustness verified under adversarial occlusion and depth noise."
+      zh: "<strong>训练与评测：</strong>行为克隆结合强化学习微调，将未见物体抓取成功率从约 77% 提升至约 89%，并通过对抗遮挡与深度噪声测试验证鲁棒性。"
+    - en: "<strong>Contribution:</strong> benchmarked against OpenVLA and other baselines to isolate depth gains; co-authored technical reports and led weekly reviews on architecture and pipeline reliability."
+      zh: "<strong>研究贡献：</strong>与 OpenVLA 等基线对比以分离深度信息带来的增益；参与撰写技术报告并主持每周评审，推动架构与流水线可靠性改进。"
+
+- sort_key: "2024-05"
+  title:
+    en: "Indoor 3D Reconstruction and Novel View Synthesis with UDF-Guided 3DGS"
+    zh: "UDF 引导 3DGS 的室内三维重建与新视角合成"
+  role:
+    en: "Research Assistant"
+    zh: "研究助理"
+  org: {en: "", zh: ""}
+  advisor:
+    en: "Prof. Yong Yue"
+    zh: "岳永 教授"
+  advisor_url: ""
+  period:
+    en: "2024.05 – 2024.12"
+    zh: "2024.05 – 2024.12"
+  summary:
+    en: >
+      In low-texture indoor scenes, appearance-driven 3D reconstruction suffers from geometric
+      ambiguity and unstable optimisation, limiting surface fidelity and novel-view quality.
+    zh: "在弱纹理室内场景中，以外观驱动的三维重建易出现几何歧义与优化不稳定，限制了表面精度与新视角合成质量。"
+  bullets:
+    - en: "<strong>Modelling:</strong> built a NeRF-style UDF (unsigned distance + normals) coupled to a 3DGS renderer, optimised with joint feature–geometry losses and normal/depth-consistency regularisation for low-texture stability."
+      zh: "<strong>建模：</strong>构建 NeRF 式 UDF（无符号距离 + 法向）并与 3DGS 渲染器耦合，采用特征—几何联合损失与法向/深度一致性正则，提升弱纹理下的稳定性。"
+    - en: "<strong>Optimisation &amp; pruning:</strong> devised multi-stage UDF-guided optimisation — coarse geometry first, then refining Gaussian positions, scales and opacities — with voxel-based partitioning for efficient clone/prune, concentrating primitives near the zero-level set."
+      zh: "<strong>优化与剪枝：</strong>设计多阶段 UDF 引导优化——先粗几何初始化，再细化高斯位置、尺度与不透明度——并用体素分区高效执行克隆/剪枝，使基元集中于零水平集附近。"
+    - en: "<strong>Evaluation:</strong> processed ScanNet++ with COLMAP calibration and point-cloud initialisation; evaluated with Chamfer Distance and PSNR, outperforming strong baselines."
+      zh: "<strong>评测：</strong>基于 COLMAP 标定与点云初始化处理 ScanNet++，以 Chamfer Distance 与 PSNR 评估，优于多个强基线。"

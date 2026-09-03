@@ -1,23 +1,12 @@
-{% include base_path %}
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+{% if page.lang == 'zh' %}{% assign p = '/zh' %}{% else %}{% assign p = '' %}{% endif %}
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="{{ p }}/">{{ site.data.profile.name[page.lang] }}</a>
+    <nav class="nav">
+      <a href="{{ p }}/"{% if page.nav == 'home' %} aria-current="page"{% endif %}>{{ t.nav_home }}</a>
+      <a href="{{ p }}/publications/"{% if page.nav == 'pubs' %} aria-current="page"{% endif %}>{{ t.nav_pubs }}</a>
+      <a href="{{ p }}/cv/"{% if page.nav == 'cv' %} aria-current="page"{% endif %}>{{ t.nav_cv }}</a>
+      <a class="lang" href="{{ page.alt_url }}" hreflang="{% if page.lang == 'zh' %}en{% else %}zh-Hans{% endif %}" aria-label="{{ t.lang_switch_aria }}">{{ t.lang_switch }}</a>
+    </nav>
   </div>
-</div>
+</header>

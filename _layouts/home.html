@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{% assign t = site.data.i18n[page.lang] %}
+{% assign me = site.data.profile %}
+{% if page.lang == 'zh' %}{% assign p = '/zh' %}{% else %}{% assign p = '' %}{% endif %}
+
+<div class="hero">
+  <img src="{{ site.author.photo }}" alt="{{ me.name[page.lang] }}">
+  <div>
+    <h1>{{ me.name[page.lang] }}
+      {% if page.lang == 'zh' %}<span class="alt-name">Jun Sun</span>{% else %}<span class="alt-name">孙俊</span>{% endif %}
+    </h1>
+    <p class="tagline">{{ me.tagline[page.lang] }}</p>
+    {% include contacts.html %}
+  </div>
+</div>
+
+<section>
+  <h2>{{ t.s_about }}</h2>
+  <p class="lede">{{ me.bio[page.lang] }}</p>
+  <p>{{ me.bio2[page.lang] }}</p>
+</section>
+
+<section>
+  <h2>{{ t.s_interests }}</h2>
+  <ul class="bullets">
+    {% for i in me.interests %}<li>{{ i[page.lang] }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>{{ t.s_news }}</h2>
+  <ul class="plain news">
+    {% for n in site.data.news %}
+    <li><span class="date">{{ n.date }}</span><span>{{ n[page.lang] }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>{{ t.s_pubs }}<span class="more"><a href="{{ p }}/publications/">{{ t.all_pubs }} &rarr;</a></span></h2>
+  {% for pub in site.data.publications %}{% if pub.selected %}{% include publication.html %}{% endif %}{% endfor %}
+</section>
+
+<section>
+  <h2>{{ t.s_experience }}<span class="more"><a href="{{ p }}/cv/">{{ t.full_cv }} &rarr;</a></span></h2>
+  {% assign timeline = site.data.research | concat: site.data.experience | sort: 'sort_key' | reverse %}
+  <ul class="plain">
+    {% for e in timeline %}{% include entry-compact.html %}{% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>{{ t.s_education }}</h2>
+  {% for e in site.data.education %}
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">{{ e.degree[page.lang] }}</div>
+      <div class="entry-period">{{ e.period[page.lang] }}</div>
+    </div>
+    <div class="entry-meta">
+      {% if e.school_url %}<a href="{{ e.school_url }}">{{ e.school[page.lang] }}</a>{% else %}{{ e.school[page.lang] }}{% endif %} · {{ e.location[page.lang] }}
+    </div>
+    <ul class="bullets">
+      {% for n in e.notes %}<li>{{ n[page.lang] }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
+
+<section>
+  <h2>{{ t.s_contact }}</h2>
+  <p>{% if page.lang == 'zh' %}欢迎就具身智能、世界模型与强化学习相关的研究、合作或读博机会与我联系。{% else %}Happy to hear from you about embodied AI, world models and reinforcement learning — research, collaboration, or PhD opportunities.{% endif %}</p>
+  <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+</section>

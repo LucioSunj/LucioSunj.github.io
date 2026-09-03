@@ -1,0 +1,12 @@
+{%- comment -%} expects `pub` in scope (e.g. from a for-loop) {%- endcomment -%}
+<div class="pub">
+  <div class="title">{{ pub.title[page.lang] }}</div>
+  <div class="authors">{{ pub.authors | replace: site.author.short_name, '<strong>@@ME@@</strong>' | replace: '@@ME@@', site.author.short_name }}</div>
+  <div class="venue">{{ pub.venue[page.lang] }}</div>
+  {% if pub.tldr %}<div class="tldr">{{ pub.tldr[page.lang] }}</div>{% endif %}
+  {% if pub.links and pub.links != empty %}
+  <div class="pill-row">
+    {% for l in pub.links %}<a class="pill" href="{{ l.url }}">{{ l.label[page.lang] }}</a>{% endfor %}
+  </div>
+  {% endif %}
+</div>

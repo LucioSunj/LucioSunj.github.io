@@ -1,0 +1,20 @@
+# Newest first. `date` is printed verbatim — edit it to the exact month once you know it.
+- date: "2026.03"
+  en: >
+    Joined <a href="https://lsk-robot.github.io/">Prof. Shangke Lyu</a>'s group at the
+    School of Robotics and Automation, Nanjing University, as a Research Assistant,
+    working on world action models and reinforcement learning.
+  zh: "加入<a href=\"https://lsk-robot.github.io/\">吕尚可</a>老师在南京大学机器人与自动化学院的课题组，担任研究助理，研究方向为世界-动作模型与强化学习。"
+- date: "2026"
+  en: >
+    Two papers accepted to <strong>IROS 2026</strong>: <em>TempoFit</em> (first author) and
+    <em>Force-Aware Residual DAgger</em>.
+  zh: "两篇论文被 <strong>IROS 2026</strong> 接收：<em>TempoFit</em>（第一作者）与 <em>Force-Aware Residual DAgger</em>。"
+- date: "2025.06"
+  en: >
+    Started as an algorithm R&amp;D intern at <strong>Westlake Robotics</strong>, Hangzhou,
+    on real-robot deformable-object manipulation.
+  zh: "入职<strong>西湖机器人</strong>（杭州）算法研发部实习，参与真机可形变物体操作。"
+- date: "2025"
+  en: "<em>MiTPose</em> accepted to <strong>INDIN 2025</strong>."
+  zh: "<em>MiTPose</em> 被 <strong>INDIN 2025</strong> 接收。"
