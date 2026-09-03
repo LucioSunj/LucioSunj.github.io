@@ -18,6 +18,7 @@
   --accent-bg: #f1eeff;
   --cta-a:     #5b4bf0;
   --cta-b:     #9333ea;
+  --plate:     #ffffff;
   --shadow-sm: 0 1px 2px rgba(18,18,26,.04), 0 4px 16px rgba(18,18,26,.04);
   --shadow-md: 0 2px 6px rgba(18,18,26,.05), 0 18px 48px rgba(80,60,200,.10);
 
@@ -46,6 +47,7 @@
     --accent-bg: #1c1830;
     --cta-a:     #4436c4;
     --cta-b:     #7322bd;
+    --plate:     #f4f3fa;
     --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
     --shadow-md: 0 2px 6px rgba(0,0,0,.4), 0 18px 48px rgba(0,0,0,.5);
   }
@@ -221,6 +223,13 @@ section { padding: 3.25rem 0; scroll-margin-top: 2rem; }
   background: var(--accent-bg); color: var(--accent);
   border: 1px solid var(--border); font-size: .88rem; letter-spacing: .02em;
 }
+/* institution / venue logo plate — keeps every logo on the same light ground
+   so dark and colourful marks stay legible in both themes */
+.card .tile.logo {
+  background: var(--plate); border: 1px solid var(--border);
+  padding: 12px;
+}
+.card .tile.logo img { object-fit: contain; }
 .card .year {
   color: var(--muted); font-family: var(--mono); font-size: .78rem;
   font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: .3rem;
@@ -306,6 +315,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
   .headline { font-size: clamp(1.95rem, 8.5vw, 2.5rem); }
   .card { grid-template-columns: 1fr; gap: .9rem; padding: 1.2rem; }
   .card .tile { width: 46px; height: 46px; border-radius: 12px; font-size: .9rem; }
+  .card .tile.logo { padding: 7px; }
   .card .year { padding-top: 0; }
   .news li { flex-direction: column; gap: .1rem; }
   .news .date { width: auto; padding-top: 0; }

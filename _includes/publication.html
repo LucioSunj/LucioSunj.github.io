@@ -1,8 +1,12 @@
 {%- comment -%} expects `pub` in scope {%- endcomment -%}
 <article class="card">
-  <div class="tile{% unless pub.thumb %} soft{% endunless %}">
-    {% if pub.thumb %}<img src="{{ pub.thumb }}" alt="">{% else %}{{ pub.tile_label | default: pub.short_venue }}{% endif %}
-  </div>
+  {% if pub.thumb %}
+  <div class="tile"><img src="{{ pub.thumb }}" alt=""></div>
+  {% elsif pub.logo %}
+  <div class="tile logo"><img src="{{ pub.logo }}" alt="{{ pub.short_venue }}"></div>
+  {% else %}
+  <div class="tile soft">{{ pub.tile_label | default: pub.short_venue }}</div>
+  {% endif %}
   <div>
     <h3>{% if pub.links and pub.links != empty %}<a href="{{ pub.links[0].url }}">{{ pub.title[page.lang] }}</a>{% else %}{{ pub.title[page.lang] }}{% endif %}</h3>
     <p class="authors">{{ pub.authors | replace: site.author.short_name, '<strong>@@ME@@</strong>' | replace: '@@ME@@', site.author.short_name }}</p>

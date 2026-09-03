@@ -65,6 +65,25 @@ in `_config.yml` to fall back to the gradient monogram instead.
 use `initials` (e.g. `NJU`, `XJTLU`). A publication can also set `thumb:` to a teaser
 image path, which replaces the label tile.
 
+## Logos
+
+Every card shows a logo plate on the left. The files under `assets/img/logos/` are
+**placeholders** — plain wordmarks in the accent colour. Drop the real logo over the
+matching file and the site picks it up; nothing else needs editing.
+
+| File | Used by |
+| --- | --- |
+| `assets/img/logos/xjtlu.svg` | XJTLU degree + the three XJTLU research positions |
+| `assets/img/logos/nju.svg` | Nanjing University position |
+| `assets/img/logos/westlake.svg` | Westlake Robotics internship |
+| `assets/img/logos/iros.svg` | both IROS 2026 papers |
+| `assets/img/logos/indin.svg` | INDIN 2025 paper |
+
+SVG is preferred; a transparent PNG at 200×200 or larger also works — change the
+`logo:` path in the matching `_data/*.yml` entry if you use a different extension.
+Logos sit on a light plate in both light and dark mode, so a dark or coloured mark
+stays legible either way. Remove an entry's `logo:` field to fall back to the text tile.
+
 **Fill in the links you left blank** — `author.scholar`, `orcid`, `linkedin`,
 `twitter` in `_config.yml`. Blank ones are hidden automatically.
 
@@ -83,6 +102,7 @@ No Actions workflow needed.
 ## To do
 
 - [ ] Replace `assets/img/profile.jpg` with a real photo
+- [ ] Replace the five placeholder logos in `assets/img/logos/`
 - [ ] Add Google Scholar / ORCID links in `_config.yml`
 - [ ] Re-export `files/Jun_Sun_CV.pdf` once the CV includes the Nanjing University position
 - [ ] Fill in exact months for the two `2026` / `2025` news items
