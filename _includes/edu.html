@@ -1,0 +1,15 @@
+{%- comment -%} expects `e` in scope {%- endcomment -%}
+<article class="card">
+  <div class="tile soft">{{ e.initials | default: '·' }}</div>
+  <div>
+    <h3>{{ e.degree[page.lang] }}</h3>
+    <p class="meta">
+      {%- if e.school_url %}<a href="{{ e.school_url }}">{{ e.school[page.lang] }}</a>{% else %}{{ e.school[page.lang] }}{% endif -%}
+      {%- if e.location %} · {{ e.location[page.lang] }}{% endif -%}
+    </p>
+    <ul class="bullets">
+      {% for n in e.notes %}<li>{{ n[page.lang] }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="year">{{ e.period[page.lang] }}</div>
+</article>

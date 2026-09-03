@@ -1,12 +1,16 @@
 {% if page.lang == 'zh' %}{% assign p = '/zh' %}{% else %}{% assign p = '' %}{% endif %}
 <header class="masthead">
   <div class="wrap">
-    <a class="brand" href="{{ p }}/">{{ site.data.profile.name[page.lang] }}</a>
+    <a class="brand" href="{{ p }}/">
+      <span class="mark">JS</span>
+      <span>{{ site.data.profile.name[page.lang] }}</span>
+    </a>
     <nav class="nav">
-      <a href="{{ p }}/"{% if page.nav == 'home' %} aria-current="page"{% endif %}>{{ t.nav_home }}</a>
-      <a href="{{ p }}/publications/"{% if page.nav == 'pubs' %} aria-current="page"{% endif %}>{{ t.nav_pubs }}</a>
-      <a href="{{ p }}/cv/"{% if page.nav == 'cv' %} aria-current="page"{% endif %}>{{ t.nav_cv }}</a>
+      <a class="hide-sm" href="{{ p }}/#focus">{{ t.nav_focus }}</a>
+      <a href="{{ p }}/publications/">{{ t.nav_pubs }}</a>
+      <a class="hide-sm" href="{{ p }}/cv/">{{ t.nav_cv }}</a>
       <a class="lang" href="{{ page.alt_url }}" hreflang="{% if page.lang == 'zh' %}en{% else %}zh-Hans{% endif %}" aria-label="{{ t.lang_switch_aria }}">{{ t.lang_switch }}</a>
+      <a class="btn btn-primary hide-sm" href="mailto:{{ site.author.email }}">{{ t.nav_contact }} &#8599;</a>
     </nav>
   </div>
 </header>

@@ -1,36 +1,54 @@
 name:
   en: "Jun Sun"
-  zh: "孙俊"
+  zh: "孙珺"
+alt_name:
+  en: "孙珺"
+  zh: "Jun Sun"
+eyebrow:
+  en: "EMBODIED AI · ROBOT MANIPULATION"
+  zh: "具身智能 · 机器人操作"
+# The hero headline. The last line is rendered in the accent colour.
+hero_lines:
+  - en: "Model the world."
+    zh: "建模世界。"
+  - en: "Understand the world."
+    zh: "理解世界。"
+  - en: "Act in the world."
+    zh: "行动于世界。"
+    accent: true
 tagline:
-  en: "Research Assistant, School of Robotics and Automation, Nanjing University"
-  zh: "南京大学 机器人与自动化学院 研究助理"
-affiliation_url: "https://ra.nju.edu.cn/"
+  en: "Embodied manipulation · Xi'an Jiaotong-Liverpool University · Nanjing University"
+  zh: "具身操作 · 西交利物浦大学 · 南京大学"
 # NOTE: Chinese text is kept on one line on purpose — YAML folded blocks (>)
 # insert a space at every line break, which shows up as a gap in CJK text.
 bio:
   en: >
-    I work on <strong>world action models</strong> and <strong>reinforcement learning</strong> for
-    robot manipulation — how a policy should represent what will happen next, when it is worth
-    spending compute to imagine the future, and how predictive representations turn into reliable
-    long-horizon action.
-  zh: "我的研究方向是机器人操作中的<strong>世界-动作模型（world action model）</strong>与<strong>强化学习</strong>——策略应当如何表征“接下来会发生什么”，何时值得花费算力去预测未来，以及预测性表征如何转化为稳定可靠的长程操作。"
-bio2:
-  en: >
-    I am a Research Assistant in
-    <a href="https://lsk-robot.github.io/">Prof. Shangke Lyu</a>'s group at the
+    I focus on <strong>embodied manipulation</strong>, and I am currently on a gap year.
+    I am at <a href="https://www.xjtlu.edu.cn/">Xi'an Jiaotong-Liverpool University</a>,
+    advised by Prof. Yong Yue and Prof. Yaran Chen, and I work with
+    <a href="https://lsk-robot.github.io/">Prof. Shangke Lyu</a> at the
     <a href="https://ra.nju.edu.cn/">School of Robotics and Automation, Nanjing University</a>.
-    Before that I built training-free temporal memory for vision-language-action policies
-    (<em>TempoFit</em>, IROS 2026), depth-grounded VLA pretraining, and spent a summer at
-    Westlake Robotics working on real-robot deformable-object manipulation.
-    I received my BSc in Information and Computing Science from
-    Xi'an Jiaotong-Liverpool University in 2026.
-  zh: "我目前在<a href=\"https://ra.nju.edu.cn/\">南京大学机器人与自动化学院</a> <a href=\"https://lsk-robot.github.io/\">吕尚可</a> 老师组内担任研究助理。此前的工作包括：为视觉-语言-动作（VLA）策略设计免训练的时序记忆（<em>TempoFit</em>，IROS 2026）、面向深度感知的 VLA 预训练，以及在西湖机器人（Westlake Robotics）参与真机可形变物体操作。2026 年本科毕业于西交利物浦大学信息与计算科学专业。"
-interests:
-  - en: "World action models &amp; predictive representations for manipulation"
-    zh: "世界-动作模型与面向操作的预测性表征"
-  - en: "Reinforcement learning and adaptive computation for embodied agents"
-    zh: "具身智能体的强化学习与自适应计算"
-  - en: "Vision-Language-Action policies for long-horizon manipulation"
-    zh: "面向长程操作的视觉-语言-动作策略"
-  - en: "Real-robot learning: data pipelines, sim-to-real, deployment"
-    zh: "真机学习：数据流水线、Sim-to-Real 与部署"
+    I previously interned at Westlake Robotics.
+  zh: "我的方向是<strong>具身操作（embodied manipulation）</strong>，目前处于 gap year。我在<a href=\"https://www.xjtlu.edu.cn/\">西交利物浦大学</a>，由岳永教授与陈亚冉教授指导，同时与<a href=\"https://ra.nju.edu.cn/\">南京大学机器人与自动化学院</a>的<a href=\"https://lsk-robot.github.io/\">吕尚可</a>老师合作；此前曾在西湖机器人实习。"
+goal:
+  en: >
+    An embodied system that generalizes robustly enough to complete long-horizon, complex
+    manipulation tasks in open environments.
+  zh: "构建能在开放环境中稳健泛化、完成长程复杂操作任务的具身系统。"
+focus:
+  - en: >
+      I model how an embodied agent <strong>understands and represents the world</strong>, and build
+      systems that <strong>act</strong> in a manner consistent with those internal representations.
+    zh: "我研究具身智能体如何<strong>理解并表征世界</strong>，并让系统以与这一内部表征相一致的方式<strong>行动</strong>。"
+  - en: >
+      Vision-Language-Action policies break down on long-horizon tasks in open environments because
+      they hold no stable representation of task-relevant state, temporal dependency, or transition
+      condition — capping robustness, generalization and success rate at once. My work introduces
+      stronger state modeling and decision-support mechanisms for VLA.
+    zh: "现有 VLA 操作系统在长程、复杂、开放环境任务上失效，根源在于缺乏对任务相关状态、时序依赖与转移条件的稳定表征——鲁棒性、泛化能力与成功率因此被同时压低。我的工作是为 VLA 引入更强的状态建模与决策支持机制。"
+# Floating labels on the portrait card.
+chips:
+  - en: "01 · World representation"
+    zh: "01 · 世界表征"
+  - en: "02 · Embodied policy"
+    zh: "02 · 具身策略"

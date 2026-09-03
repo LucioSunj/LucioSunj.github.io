@@ -1,25 +1,26 @@
-{%- comment -%} expects `e` in scope (e.g. from a for-loop) {%- endcomment -%}
-<div class="entry">
-  <div class="entry-head">
-    <div class="entry-title">
+{%- comment -%} expects `e` in scope; `full` = true to show bullets {%- endcomment -%}
+<article class="card">
+  <div class="tile soft">{{ e.initials | default: '·' }}</div>
+  <div>
+    <h3>
       {% if e.title %}{{ e.title[page.lang] }}{% else %}{{ e.role[page.lang] }}{% endif %}
-      {% if e.current %}<span class="badge">{% if page.lang == 'zh' %}进行中{% else %}Current{% endif %}</span>{% endif %}
-    </div>
-    <div class="entry-period">{{ e.period[page.lang] }}</div>
+      {% if e.current %}<span class="badge">{{ t.current }}</span>{% endif %}
+    </h3>
+    <p class="meta">
+      {%- if e.title %}{{ e.role[page.lang] }}{% endif -%}
+      {%- if e.org and e.org[page.lang] != '' -%}
+        {%- if e.title %} · {% endif -%}
+        {%- if e.org_url and e.org_url != '' %}<a href="{{ e.org_url }}">{{ e.org[page.lang] }}</a>{% else %}{{ e.org[page.lang] }}{% endif -%}
+      {%- endif -%}
+      {%- if e.location %} · {{ e.location[page.lang] }}{% endif -%}
+      {%- if e.advisor %} · {{ t.advisor }}{% if e.advisor_url and e.advisor_url != '' %}<a href="{{ e.advisor_url }}">{{ e.advisor[page.lang] }}</a>{% else %}{{ e.advisor[page.lang] }}{% endif %}{% endif -%}
+    </p>
+    {% if e.summary and full %}<p class="blurb">{{ e.summary[page.lang] }}</p>{% endif %}
+    {% if e.bullets and full %}
+    <ul class="bullets">
+      {% for b in e.bullets %}<li>{{ b[page.lang] }}</li>{% endfor %}
+    </ul>
+    {% endif %}
   </div>
-  <div class="entry-meta">
-    {%- if e.title %}{{ e.role[page.lang] }}{% endif -%}
-    {%- if e.org and e.org[page.lang] != '' -%}
-      {%- if e.title %} · {% endif -%}
-      {%- if e.org_url and e.org_url != '' %}<a href="{{ e.org_url }}">{{ e.org[page.lang] }}</a>{% else %}{{ e.org[page.lang] }}{% endif -%}
-    {%- endif -%}
-    {%- if e.location %} · {{ e.location[page.lang] }}{% endif -%}
-    {%- if e.advisor %} · {{ t.advisor }}{% if e.advisor_url and e.advisor_url != '' %}<a href="{{ e.advisor_url }}">{{ e.advisor[page.lang] }}</a>{% else %}{{ e.advisor[page.lang] }}{% endif %}{% endif -%}
-  </div>
-  {% if e.summary %}<p class="entry-summary">{{ e.summary[page.lang] }}</p>{% endif %}
-  {% if e.bullets %}
-  <ul class="bullets">
-    {% for b in e.bullets %}<li>{{ b[page.lang] }}</li>{% endfor %}
-  </ul>
-  {% endif %}
-</div>
+  <div class="year">{{ e.period[page.lang] }}</div>
+</article>

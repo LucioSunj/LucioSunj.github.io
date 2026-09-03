@@ -6,5 +6,10 @@ permalink: /404.html
 alt_url: /zh/
 ---
 {% assign t = site.data.i18n[page.lang] %}
-<h1 style="font-family:var(--serif);font-size:1.9rem;">{{ t.not_found }}</h1>
-<p>{{ t.not_found_body }} <a href="/">&larr; Home</a></p>
+<div class="wrap">
+  <div class="page-head" style="padding-top:4rem;">
+    <h1>{{ t.not_found }}</h1>
+    <p>{{ t.not_found_body }}</p>
+  </div>
+  <a class="btn btn-primary" href="/">&larr; Home</a>
+</div>

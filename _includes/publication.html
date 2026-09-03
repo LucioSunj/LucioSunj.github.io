@@ -1,12 +1,18 @@
-{%- comment -%} expects `pub` in scope (e.g. from a for-loop) {%- endcomment -%}
-<div class="pub">
-  <div class="title">{{ pub.title[page.lang] }}</div>
-  <div class="authors">{{ pub.authors | replace: site.author.short_name, '<strong>@@ME@@</strong>' | replace: '@@ME@@', site.author.short_name }}</div>
-  <div class="venue">{{ pub.venue[page.lang] }}</div>
-  {% if pub.tldr %}<div class="tldr">{{ pub.tldr[page.lang] }}</div>{% endif %}
-  {% if pub.links and pub.links != empty %}
-  <div class="pill-row">
-    {% for l in pub.links %}<a class="pill" href="{{ l.url }}">{{ l.label[page.lang] }}</a>{% endfor %}
+{%- comment -%} expects `pub` in scope {%- endcomment -%}
+<article class="card">
+  <div class="tile{% unless pub.thumb %} soft{% endunless %}">
+    {% if pub.thumb %}<img src="{{ pub.thumb }}" alt="">{% else %}{{ pub.tile_label | default: pub.short_venue }}{% endif %}
   </div>
-  {% endif %}
-</div>
+  <div>
+    <h3>{% if pub.links and pub.links != empty %}<a href="{{ pub.links[0].url }}">{{ pub.title[page.lang] }}</a>{% else %}{{ pub.title[page.lang] }}{% endif %}</h3>
+    <p class="authors">{{ pub.authors | replace: site.author.short_name, '<strong>@@ME@@</strong>' | replace: '@@ME@@', site.author.short_name }}</p>
+    <p class="venue"><em>{{ pub.short_venue }}</em> <span class="vlong">{{ pub.venue[page.lang] }}</span></p>
+    {% if pub.tldr %}<p class="blurb">{{ pub.tldr[page.lang] }}</p>{% endif %}
+    {% if pub.links and pub.links != empty %}
+    <div class="pill-row">
+      {% for l in pub.links %}<a class="pill" href="{{ l.url }}">{{ l.label[page.lang] }}</a>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="year">{{ pub.year }}</div>
+</article>

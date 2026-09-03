@@ -14,7 +14,7 @@ and the pages are thin front-matter stubs that pick a layout and a language.
 
 ```
 _data/
-  profile.yml        name, tagline, bio, research interests
+  profile.yml        name, eyebrow, hero headline, bio, goal, research focus, chips
   news.yml           the "News / 近况" list
   publications.yml   papers (set `selected: true` to show one on the homepage)
   research.yml       research experience
@@ -25,9 +25,9 @@ _data/
   i18n.yml           every UI string, in both languages
 
 _layouts/            default · home · publications · cv
-_includes/           head · masthead · footer · contacts · publication · entry
+_includes/           head · masthead · footer · socials · publication · entry · edu
 assets/css/style.css the whole stylesheet (light + dark, responsive, print)
-assets/img/          profile.svg (placeholder) · favicon.svg
+assets/img/          profile.jpg (placeholder portrait — replace it) · favicon.svg
 files/               Jun_Sun_CV.pdf
 
 index.html  publications.html  cv.html          ← English pages
@@ -54,8 +54,16 @@ also lists it on the homepage.
 > ⚠️ Keep Chinese strings on a **single line**. YAML's folded style (`>`) inserts a
 > space at every line break, which shows up as a visible gap in CJK text.
 
-**Replace the portrait** — drop a square image at `assets/img/profile.jpg`
-and point `author.photo` in `_config.yml` at it.
+**Replace the portrait** — overwrite `assets/img/profile.jpg` with your own photo.
+A 4:5 portrait works best; nothing else needs changing. Blank out `author.photo`
+in `_config.yml` to fall back to the gradient monogram instead.
+
+**Change the hero headline** — `hero_lines` in `_data/profile.yml`. The line with
+`accent: true` is the one rendered in the violet gradient.
+
+**Card labels** — publications use `tile_label` (e.g. `IROS`), positions and degrees
+use `initials` (e.g. `NJU`, `XJTLU`). A publication can also set `thumb:` to a teaser
+image path, which replaces the label tile.
 
 **Fill in the links you left blank** — `author.scholar`, `orcid`, `linkedin`,
 `twitter` in `_config.yml`. Blank ones are hidden automatically.
@@ -74,7 +82,7 @@ No Actions workflow needed.
 
 ## To do
 
-- [ ] Replace `assets/img/profile.svg` with a real photo
+- [ ] Replace `assets/img/profile.jpg` with a real photo
 - [ ] Add Google Scholar / ORCID links in `_config.yml`
 - [ ] Re-export `files/Jun_Sun_CV.pdf` once the CV includes the Nanjing University position
 - [ ] Fill in exact months for the two `2026` / `2025` news items

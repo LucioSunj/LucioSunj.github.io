@@ -4,7 +4,7 @@
 # ─────────────────────────────────────────────────────────────
 
 title            : "Jun Sun"
-description      : "Jun Sun — world action models and reinforcement learning for robot manipulation."
+description      : "Jun Sun (孙珺) — embodied manipulation: modelling and understanding the world, and acting in it."
 url              : "https://luciosunj.github.io"
 baseurl          : ""
 repository       : "LucioSunj/LucioSunj.github.io"
@@ -12,7 +12,7 @@ lang             : "en"
 
 author:
   name_en        : "Jun Sun"
-  name_zh        : "孙俊"
+  name_zh        : "孙珺"
   short_name     : "J. Sun"          # used to bold your name in author lists
   email          : "luciojunsun@gmail.com"
   github         : "LucioSunj"
@@ -21,7 +21,7 @@ author:
   orcid          : ""
   linkedin       : ""
   twitter        : ""
-  photo          : "/assets/img/profile.svg"
+  photo          : "/assets/img/profile.jpg"   # drop your portrait here (4:5 works best); blank it to fall back to the monogram
   cv_pdf         : "/files/Jun_Sun_CV.pdf"
 
 # Build

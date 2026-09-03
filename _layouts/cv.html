@@ -4,63 +4,53 @@ layout: default
 {% assign t = site.data.i18n[page.lang] %}
 {% assign me = site.data.profile %}
 
-<div style="display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1.75rem;">
-  <h1 style="font-family:var(--serif);font-size:1.9rem;margin:0;">{{ t.nav_cv }}</h1>
-  {% if site.author.cv_pdf %}<a class="pill no-print" href="{{ site.author.cv_pdf }}">{{ t.download_cv }}</a>{% endif %}
-</div>
-
-<p class="entry-meta" style="margin-bottom:2.5rem;">
-  {{ me.name[page.lang] }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-  {% if site.author.github %} · <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>{% endif %}
-</p>
-
-<section>
-  <h2>{{ t.s_education }}</h2>
-  {% for e in site.data.education %}
-  <div class="entry">
-    <div class="entry-head">
-      <div class="entry-title">{{ e.degree[page.lang] }}</div>
-      <div class="entry-period">{{ e.period[page.lang] }}</div>
-    </div>
-    <div class="entry-meta">
-      {% if e.school_url %}<a href="{{ e.school_url }}">{{ e.school[page.lang] }}</a>{% else %}{{ e.school[page.lang] }}{% endif %} · {{ e.location[page.lang] }}
-    </div>
-    <ul class="bullets">
-      {% for n in e.notes %}<li>{{ n[page.lang] }}</li>{% endfor %}
-    </ul>
+<div class="wrap">
+  <div class="page-head">
+    <h1>{{ t.nav_cv }}</h1>
+    <p>
+      {{ me.name[page.lang] }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      {% if site.author.github and site.author.github != '' %} · <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>{% endif %}
+      {% if site.author.cv_pdf and site.author.cv_pdf != '' %} · <a class="no-print" href="{{ site.author.cv_pdf }}">{{ t.download_cv }}</a>{% endif %}
+    </p>
   </div>
-  {% endfor %}
-</section>
 
-<section>
-  <h2>{{ t.s_pubs_all }}</h2>
-  {% for pub in site.data.publications %}{% include publication.html %}{% endfor %}
-</section>
+  <section>
+    <div class="sec-head"><h2>{{ t.s_education }}</h2></div>
+    {% for e in site.data.education %}{% include edu.html %}{% endfor %}
+  </section>
 
-<section>
-  <h2>{{ t.s_experience }}</h2>
-  {% for e in site.data.experience %}{% include entry.html %}{% endfor %}
-</section>
+  <section>
+    <div class="sec-head"><h2>{{ t.s_pubs_all }}</h2></div>
+    {% for pub in site.data.publications %}{% include publication.html %}{% endfor %}
+  </section>
 
-<section>
-  <h2>{{ t.s_research }}</h2>
-  {% for e in site.data.research %}{% include entry.html %}{% endfor %}
-</section>
+  <section>
+    <div class="sec-head"><h2>{{ t.s_research }}</h2></div>
+    {% assign full = true %}
+    {% for e in site.data.research %}{% include entry.html %}{% endfor %}
+  </section>
 
-<section>
-  <h2>{{ t.s_awards }}</h2>
-  <ul class="plain kv">
-    {% for a in site.data.awards %}
-    <li><span class="k narrow">{{ a.year }}</span><span>{{ a[page.lang] }}</span></li>
-    {% endfor %}
-  </ul>
-</section>
+  <section>
+    <div class="sec-head"><h2>{{ t.s_experience }}</h2></div>
+    {% assign full = true %}
+    {% for e in site.data.experience %}{% include entry.html %}{% endfor %}
+  </section>
 
-<section>
-  <h2>{{ t.s_skills }}</h2>
-  <ul class="plain kv">
-    {% for s in site.data.skills %}
-    <li><span class="k">{{ s.label[page.lang] }}</span><span>{{ s.value[page.lang] }}</span></li>
-    {% endfor %}
-  </ul>
-</section>
+  <section>
+    <div class="sec-head"><h2>{{ t.s_awards }}</h2></div>
+    <ul class="rows tight">
+      {% for a in site.data.awards %}
+      <li><span class="k mono">{{ a.year }}</span><span class="v">{{ a[page.lang] }}</span><span class="when"></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>{{ t.s_skills }}</h2></div>
+    <ul class="rows">
+      {% for s in site.data.skills %}
+      <li><span class="k">{{ s.label[page.lang] }}</span><span class="v">{{ s.value[page.lang] }}</span><span class="when"></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

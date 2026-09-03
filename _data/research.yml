@@ -1,6 +1,7 @@
 # Research experience. Newest first; `sort_key` merges this with experience.yml on the homepage.
 - sort_key: "2026-03"
   current: true
+  initials: "NJU"
   title:
     en: "World Action Models and Reinforcement Learning for Robot Manipulation"
     zh: "机器人操作中的世界-动作模型与强化学习"
@@ -23,6 +24,7 @@
       zh: "围绕机器人操作的世界-动作模型与强化学习开展研究：策略如何表征未来状态，以及在长程任务中如何分配这类预测能力。"
 
 - sort_key: "2025-11"
+  initials: "XJTLU"
   title:
     en: "TempoFit: Training-Free Temporal KV Memory for Long-Horizon Vision-Language-Action Manipulation"
     zh: "TempoFit：面向长程视觉-语言-动作操作的免训练时序 KV 记忆"
@@ -54,6 +56,7 @@
       zh: "<strong>真机验证：</strong>在 Realman RM-65B 上完成三个多阶段任务验证，整任务成功率最高提升 14.2%，延迟与显存开销增加有限。"
 
 - sort_key: "2025-01"
+  initials: "XJTLU"
   title:
     en: "Multimodal Embodied Intelligence with the Octo Framework and 3D Depth Perception"
     zh: "基于 Octo 框架与三维深度感知的多模态具身智能模型训练"
@@ -84,6 +87,7 @@
       zh: "<strong>研究贡献：</strong>与 OpenVLA 等基线对比以分离深度信息带来的增益；参与撰写技术报告并主持每周评审，推动架构与流水线可靠性改进。"
 
 - sort_key: "2024-05"
+  initials: "XJTLU"
   title:
     en: "Indoor 3D Reconstruction and Novel View Synthesis with UDF-Guided 3DGS"
     zh: "UDF 引导 3DGS 的室内三维重建与新视角合成"

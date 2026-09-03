@@ -5,72 +5,108 @@ layout: default
 {% assign me = site.data.profile %}
 {% if page.lang == 'zh' %}{% assign p = '/zh' %}{% else %}{% assign p = '' %}{% endif %}
 
-<div class="hero">
-  <img src="{{ site.author.photo }}" alt="{{ me.name[page.lang] }}">
-  <div>
-    <h1>{{ me.name[page.lang] }}
-      {% if page.lang == 'zh' %}<span class="alt-name">Jun Sun</span>{% else %}<span class="alt-name">孙俊</span>{% endif %}
-    </h1>
-    <p class="tagline">{{ me.tagline[page.lang] }}</p>
-    {% include contacts.html %}
-  </div>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">{{ me.eyebrow[page.lang] }}</div>
+      <h1 class="headline">
+        {% for line in me.hero_lines %}<span{% if line.accent %} class="accent"{% endif %}>{{ line[page.lang] }}</span>{% endfor %}
+      </h1>
+      <div class="hero-bio">
+        <p>{{ me.bio[page.lang] }}</p>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="#focus">{{ t.cta_research }}</a>
+        <a class="btn btn-ghost" href="mailto:{{ site.author.email }}">{{ t.cta_contact }}</a>
+      </div>
+      {% include socials.html %}
+    </div>
+    <div class="portrait">
+      <div class="portrait-frame">
+        {% if site.author.photo and site.author.photo != '' %}
+        <img src="{{ site.author.photo }}" alt="{{ me.name[page.lang] }}">
+        {% else %}
+        <div class="portrait-ph">{{ me.name.zh }}</div>
+        {% endif %}
+      </div>
+      {% for c in me.chips %}<span class="chip">{{ c[page.lang] }}</span>{% endfor %}
+    </div>
+  </section>
 </div>
 
-<section>
-  <h2>{{ t.s_about }}</h2>
-  <p class="lede">{{ me.bio[page.lang] }}</p>
-  <p>{{ me.bio2[page.lang] }}</p>
-</section>
-
-<section>
-  <h2>{{ t.s_interests }}</h2>
-  <ul class="bullets">
-    {% for i in me.interests %}<li>{{ i[page.lang] }}</li>{% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>{{ t.s_news }}</h2>
-  <ul class="plain news">
-    {% for n in site.data.news %}
-    <li><span class="date">{{ n.date }}</span><span>{{ n[page.lang] }}</span></li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>{{ t.s_pubs }}<span class="more"><a href="{{ p }}/publications/">{{ t.all_pubs }} &rarr;</a></span></h2>
-  {% for pub in site.data.publications %}{% if pub.selected %}{% include publication.html %}{% endif %}{% endfor %}
-</section>
-
-<section>
-  <h2>{{ t.s_experience }}<span class="more"><a href="{{ p }}/cv/">{{ t.full_cv }} &rarr;</a></span></h2>
-  {% assign timeline = site.data.research | concat: site.data.experience | sort: 'sort_key' | reverse %}
-  <ul class="plain">
-    {% for e in timeline %}{% include entry-compact.html %}{% endfor %}
-  </ul>
-</section>
-
-<section>
-  <h2>{{ t.s_education }}</h2>
-  {% for e in site.data.education %}
-  <div class="entry">
-    <div class="entry-head">
-      <div class="entry-title">{{ e.degree[page.lang] }}</div>
-      <div class="entry-period">{{ e.period[page.lang] }}</div>
+<div class="wrap">
+  <section id="focus">
+    <div class="sec-head">
+      <h2>{{ t.s_focus }}</h2>
+      <p>{{ t.s_focus_sub }}</p>
     </div>
-    <div class="entry-meta">
-      {% if e.school_url %}<a href="{{ e.school_url }}">{{ e.school[page.lang] }}</a>{% else %}{{ e.school[page.lang] }}{% endif %} · {{ e.location[page.lang] }}
+    <div class="focus-grid">
+      <div class="goal-card">
+        <div class="label">{{ t.s_goal }}</div>
+        <p>{{ me.goal[page.lang] }}</p>
+      </div>
+      <div class="focus-text">
+        {% for f in me.focus %}<p>{{ f[page.lang] }}</p>{% endfor %}
+      </div>
     </div>
-    <ul class="bullets">
-      {% for n in e.notes %}<li>{{ n[page.lang] }}</li>{% endfor %}
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="news">
+    <div class="sec-head">
+      <h2>{{ t.s_news }}</h2>
+    </div>
+    <ul class="news">
+      {% for n in site.data.news %}
+      <li><span class="date">{{ n.date }}</span><span class="what">{{ n[page.lang] }}</span></li>
+      {% endfor %}
     </ul>
-  </div>
-  {% endfor %}
-</section>
+  </section>
+</div>
 
-<section>
-  <h2>{{ t.s_contact }}</h2>
-  <p>{% if page.lang == 'zh' %}欢迎就具身智能、世界模型与强化学习相关的研究、合作或读博机会与我联系。{% else %}Happy to hear from you about embodied AI, world models and reinforcement learning — research, collaboration, or PhD opportunities.{% endif %}</p>
-  <p><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
-</section>
+<div class="wrap">
+  <section id="publications">
+    <div class="sec-head">
+      <h2>{{ t.s_pubs }}</h2>
+      <p>{{ t.s_pubs_sub }} <a class="sec-link" href="{{ p }}/publications/">{{ t.all_pubs }} &rarr;</a></p>
+    </div>
+    {% for pub in site.data.publications %}{% if pub.selected %}{% include publication.html %}{% endif %}{% endfor %}
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="experience">
+    <div class="sec-head">
+      <h2>{{ t.s_experience }}</h2>
+      <p>{{ t.s_exp_sub }} <a class="sec-link" href="{{ p }}/cv/">{{ t.full_cv }} &rarr;</a></p>
+    </div>
+    {% assign timeline = site.data.research | concat: site.data.experience | sort: 'sort_key' | reverse %}
+    {% assign full = false %}
+    {% for e in timeline %}{% include entry.html %}{% endfor %}
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="education">
+    <div class="sec-head">
+      <h2>{{ t.s_education }}</h2>
+    </div>
+    {% for e in site.data.education %}{% include edu.html %}{% endfor %}
+    <ul class="rows tight" style="margin-top:1.25rem;">
+      {% for a in site.data.awards %}
+      <li><span class="k mono">{{ a.year }}</span><span class="v">{{ a[page.lang] }}</span><span class="when"></span></li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="contact">
+    <div class="contact-card">
+      <h2>{{ t.s_contact }}</h2>
+      <p>{{ t.contact_line }}</p>
+      <a class="btn btn-primary" href="mailto:{{ site.author.email }}">{{ site.author.email }} &#8599;</a>
+    </div>
+  </section>
+</div>
