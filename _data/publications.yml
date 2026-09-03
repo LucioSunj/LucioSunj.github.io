@@ -8,7 +8,7 @@
     zh: "IEEE/RSJ 国际智能机器人与系统会议"
   short_venue: "IROS 2026"
   tile_label: "IROS"
-  logo: "/assets/img/logos/iros.svg"
+  logo: "/assets/img/logos/iros.png"
   year: 2026
   selected: true
   tldr:
@@ -30,7 +30,7 @@
     zh: "IEEE/RSJ 国际智能机器人与系统会议"
   short_venue: "IROS 2026"
   tile_label: "IROS"
-  logo: "/assets/img/logos/iros.svg"
+  logo: "/assets/img/logos/iros.png"
   year: 2026
   selected: true
   links:
