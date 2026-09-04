@@ -107,6 +107,7 @@ layout: default
       <h2>{{ t.s_contact }}</h2>
       <p>{{ t.contact_line }}</p>
       <a class="btn btn-primary" href="mailto:{{ site.author.email }}">{{ site.author.email }} &#8599;</a>
+      {% if site.author.wechat and site.author.wechat != '' %}<p class="contact-alt">{{ t.wechat }} · <code>{{ site.author.wechat }}</code></p>{% endif %}
     </div>
   </section>
 </div>

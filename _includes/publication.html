@@ -3,7 +3,7 @@
   {% if pub.thumb %}
   <div class="tile"><img src="{{ pub.thumb }}" alt=""></div>
   {% elsif pub.logo %}
-  <div class="tile logo"><img src="{{ pub.logo }}" alt="{{ pub.short_venue }}"></div>
+  <div class="tile logo{% if pub.logo_dark %} dark{% endif %}"><img src="{{ pub.logo }}" alt="{{ pub.short_venue }}"></div>
   {% else %}
   <div class="tile soft">{{ pub.tile_label | default: pub.short_venue }}</div>
   {% endif %}

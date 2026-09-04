@@ -10,6 +10,7 @@ layout: default
     <p>
       {{ me.name[page.lang] }} · <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
       {% if site.author.github and site.author.github != '' %} · <a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>{% endif %}
+      {% if site.author.wechat and site.author.wechat != '' %} · {{ t.wechat }} <code>{{ site.author.wechat }}</code>{% endif %}
       {% if site.author.cv_pdf and site.author.cv_pdf != '' %} · <a class="no-print" href="{{ site.author.cv_pdf }}">{{ t.download_cv }}</a>{% endif %}
     </p>
   </div>

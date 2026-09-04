@@ -2,7 +2,8 @@
 - sort_key: "2026-03"
   current: true
   initials: "NJU"
-  logo: "/assets/img/logos/nju.svg"
+  logo: "/assets/img/logos/nju.png"
+  logo_dark: true   # the official school lockup is white — needs a dark plate
   title:
     en: "World Action Models and Reinforcement Learning for Robot Manipulation"
     zh: "机器人操作中的世界-动作模型与强化学习"
@@ -26,7 +27,7 @@
 
 - sort_key: "2025-11"
   initials: "XJTLU"
-  logo: "/assets/img/logos/xjtlu.svg"
+  logo: "/assets/img/logos/xjtlu.png"
   title:
     en: "TempoFit: Training-Free Temporal KV Memory for Long-Horizon Vision-Language-Action Manipulation"
     zh: "TempoFit：面向长程视觉-语言-动作操作的免训练时序 KV 记忆"
@@ -59,7 +60,7 @@
 
 - sort_key: "2025-01"
   initials: "XJTLU"
-  logo: "/assets/img/logos/xjtlu.svg"
+  logo: "/assets/img/logos/xjtlu.png"
   title:
     en: "Multimodal Embodied Intelligence with the Octo Framework and 3D Depth Perception"
     zh: "基于 Octo 框架与三维深度感知的多模态具身智能模型训练"
@@ -91,7 +92,7 @@
 
 - sort_key: "2024-05"
   initials: "XJTLU"
-  logo: "/assets/img/logos/xjtlu.svg"
+  logo: "/assets/img/logos/xjtlu.png"
   title:
     en: "Indoor 3D Reconstruction and Novel View Synthesis with UDF-Guided 3DGS"
     zh: "UDF 引导 3DGS 的室内三维重建与新视角合成"

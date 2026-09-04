@@ -67,25 +67,32 @@ image path, which replaces the label tile.
 
 ## Logos
 
-Every card shows a logo plate on the left. The files under `assets/img/logos/` are
-**placeholders** — plain wordmarks in the accent colour. Drop the real logo over the
-matching file and the site picks it up; nothing else needs editing.
+Every card shows a logo plate on the left, read from the `logo:` field of the
+matching `_data/*.yml` entry.
 
-| File | Used by |
-| --- | --- |
-| `assets/img/logos/xjtlu.svg` | XJTLU degree + the three XJTLU research positions |
-| `assets/img/logos/nju.svg` | Nanjing University position |
-| `assets/img/logos/westlake.svg` | Westlake Robotics internship |
-| `assets/img/logos/iros.svg` | both IROS 2026 papers |
-| `assets/img/logos/indin.svg` | INDIN 2025 paper |
+```bash
+bash scripts/fetch-logos.sh      # run this on your own machine
+```
 
-SVG is preferred; a transparent PNG at 200×200 or larger also works — change the
-`logo:` path in the matching `_data/*.yml` entry if you use a different extension.
-Logos sit on a light plate in both light and dark mode, so a dark or coloured mark
-stays legible either way. Remove an entry's `logo:` field to fall back to the text tile.
+That pulls the official XJTLU, NJU and IROS marks straight from their sites into
+`assets/img/logos/`. Anything it cannot fetch keeps the current file, so it is
+safe to re-run.
 
-**Fill in the links you left blank** — `author.scholar`, `orcid`, `linkedin`,
-`twitter` in `_config.yml`. Blank ones are hidden automatically.
+| File | Used by | Status |
+| --- | --- | --- |
+| `xjtlu.png` | XJTLU degree + the three XJTLU positions | ✓ real crest |
+| `iros.webp` | both IROS 2026 papers | ✓ real logo |
+| `westlake.webp` | Westlake Robotics internship | ✓ real logo |
+| `nju.png` | Nanjing University position | placeholder — `fetch-logos.sh` pulls the official one |
+| `indin.svg` | INDIN 2025 paper | placeholder wordmark (fine as is) |
+
+The NJU school lockup only exists as white-on-transparent, so that entry sets
+`logo_dark: true`, which puts its tile on a dark plate. Add the same line to any
+other entry whose logo is white; remove it if you swap in a dark version.
+
+SVG is preferred; a transparent PNG at 200×200 or larger works too — just change
+the `logo:` path if the extension differs. Remove an entry's `logo:` field
+entirely to fall back to the text tile.
 
 ## Running it locally
 
@@ -102,7 +109,7 @@ No Actions workflow needed.
 ## To do
 
 - [ ] Replace `assets/img/profile.jpg` with a real photo
-- [ ] Replace the five placeholder logos in `assets/img/logos/`
+- [ ] Run `bash scripts/fetch-logos.sh`, then add a Westlake Robotics logo by hand
 - [ ] Add Google Scholar / ORCID links in `_config.yml`
 - [ ] Re-export `files/Jun_Sun_CV.pdf` once the CV includes the Nanjing University position
 - [ ] Fill in exact months for the two `2026` / `2025` news items

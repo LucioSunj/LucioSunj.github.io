@@ -20,6 +20,7 @@ author:
   scholar        : ""                # e.g. https://scholar.google.com/citations?user=XXXX
   orcid          : ""
   linkedin       : ""
+  wechat         : "qw2667180048"      # shown as plain text, not a link
   twitter        : ""
   photo          : "/assets/img/profile.jpg"   # drop your portrait here (4:5 works best); blank it to fall back to the monogram
   cv_pdf         : "/files/Jun_Sun_CV.pdf"
@@ -40,6 +41,7 @@ include:
   - .htaccess
 
 exclude:
+  - assets/img/profile-full.jpg   # the untouched original; profile.jpg is the cropped one
   - Gemfile
   - Gemfile.lock
   - vendor

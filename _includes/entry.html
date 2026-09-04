@@ -1,7 +1,7 @@
 {%- comment -%} expects `e` in scope; `full` = true to show bullets {%- endcomment -%}
 <article class="card">
   {% if e.logo %}
-  <div class="tile logo"><img src="{{ e.logo }}" alt="{{ e.org[page.lang] | default: e.initials }}"></div>
+  <div class="tile logo{% if e.logo_dark %} dark{% endif %}"><img src="{{ e.logo }}" alt="{{ e.org[page.lang] | default: e.initials }}"></div>
   {% else %}
   <div class="tile soft">{{ e.initials | default: '·' }}</div>
   {% endif %}

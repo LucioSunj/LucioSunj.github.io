@@ -1,7 +1,7 @@
 {%- comment -%} expects `e` in scope {%- endcomment -%}
 <article class="card">
   {% if e.logo %}
-  <div class="tile logo"><img src="{{ e.logo }}" alt="{{ e.school[page.lang] }}"></div>
+  <div class="tile logo{% if e.logo_dark %} dark{% endif %}"><img src="{{ e.logo }}" alt="{{ e.school[page.lang] }}"></div>
   {% else %}
   <div class="tile soft">{{ e.initials | default: '·' }}</div>
   {% endif %}
