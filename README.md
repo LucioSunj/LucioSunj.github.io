@@ -94,6 +94,35 @@ SVG is preferred; a transparent PNG at 200×200 or larger works too — just cha
 the `logo:` path if the extension differs. Remove an entry's `logo:` field
 entirely to fall back to the text tile.
 
+## Colours
+
+The whole palette is ~20 CSS custom properties in the two `:root` blocks at the
+top of `assets/css/style.css` — a claret accent on warm paper. Nothing else in
+the stylesheet hard-codes a colour, so changing those tokens repaints the site.
+
+Three alternates ship as override files. Set one in `_config.yml`:
+
+```yaml
+palette          : "navy"     # "" | navy | forest | violet
+```
+
+| Value | Accent | Feel |
+| --- | --- | --- |
+| `""` (default) | `#8a2f39` claret on `#fdfcfa` warm paper | university press |
+| `navy` | `#1b3a6b` on white | institutional; matches the XJTLU crest |
+| `forest` | `#1f4d3d` on white | formal, less common than navy |
+| `violet` | `#5b4bf0` | the original draft — brighter, more startup |
+
+The override loads after `style.css` and only redefines tokens, so a blank or
+misspelled value just falls back to claret.
+
+Two knobs do most of the work if you roll your own: `--accent` is every link,
+heading rule and pill, and `--cta-a` is the Contact block. Setting `--accent-2`
+equal to `--accent` (and `--cta-b` to `--cta-a`) collapses every gradient in the
+stylesheet into a flat fill — that, more than the hue, is what makes the page
+read as formal rather than as a product landing page. `--wash-a` / `--wash-b`
+are the tint behind the top of the page; keep them under about 8% opacity.
+
 ## Running it locally
 
 ```bash

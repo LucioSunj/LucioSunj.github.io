@@ -10,6 +10,10 @@ baseurl          : ""
 repository       : "LucioSunj/LucioSunj.github.io"
 lang             : "en"
 
+# Colour palette. Leave blank for the built-in claret; set to navy,
+# forest or violet to load assets/css/palette-<name>.css over it.
+palette          : ""              # "" | navy | forest | violet
+
 author:
   name_en        : "Jun Sun"
   name_zh        : "孙珺"

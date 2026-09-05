@@ -1,0 +1,49 @@
+/* ─────────────────────────────────────────────────────────────
+   Palette override: Deep green
+   Loaded after style.css when `palette: forest` is set in _config.yml.
+   Only colour tokens live here — everything else stays in style.css.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg:          #ffffff;
+  --wash-a:      rgba(31,77,61,.06);
+  --wash-b:      rgba(31,77,61,.03);
+  --surface:     #fafbfa;
+  --surface-2:   #eff3f1;
+  --ink:         #0f1512;
+  --ink-2:       #333c37;
+  --muted:       #5f6b65;
+  --border:      #e3e9e6;
+  --border-2:    #d2dad6;
+  --accent:      #1f4d3d;
+  --accent-2:    #1f4d3d;
+  --accent-bg:   #e9f1ed;
+  --cta-a:       #1a4034;
+  --cta-b:       #1a4034;
+  --plate:       #ffffff;
+  --shadow-sm:   0 1px 2px rgba(16,22,32,.04), 0 4px 14px rgba(16,22,32,.05);
+  --shadow-md:   0 2px 6px rgba(16,22,32,.06), 0 16px 40px rgba(16,22,32,.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #0b100d;
+    --wash-a:      rgba(70,150,120,.12);
+    --wash-b:      rgba(70,150,120,.06);
+    --surface:     #111713;
+    --surface-2:   #171f1a;
+    --ink:         #e7eee9;
+    --ink-2:       #c2cbc6;
+    --muted:       #8a958f;
+    --border:      #1d2621;
+    --border-2:    #28332d;
+    --accent:      #7dbba1;
+    --accent-2:    #7dbba1;
+    --accent-bg:   #13211b;
+    --cta-a:       #1f4d3d;
+    --cta-b:       #1f4d3d;
+    --plate:       #eef3f0;
+    --shadow-sm:   0 1px 2px rgba(0,0,0,.45);
+    --shadow-md:   0 2px 6px rgba(0,0,0,.45), 0 16px 40px rgba(0,0,0,.5);
+  }
+}

@@ -1,0 +1,49 @@
+/* ─────────────────────────────────────────────────────────────
+   Palette override: Oxford navy
+   Loaded after style.css when `palette: navy` is set in _config.yml.
+   Only colour tokens live here — everything else stays in style.css.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg:          #ffffff;
+  --wash-a:      rgba(27,58,107,.07);
+  --wash-b:      rgba(27,58,107,.035);
+  --surface:     #fafbfd;
+  --surface-2:   #f0f3f7;
+  --ink:         #101620;
+  --ink-2:       #333d4a;
+  --muted:       #5f6b7a;
+  --border:      #e4e8ee;
+  --border-2:    #d2d9e2;
+  --accent:      #1b3a6b;
+  --accent-2:    #1b3a6b;
+  --accent-bg:   #eaeff7;
+  --cta-a:       #16305a;
+  --cta-b:       #16305a;
+  --plate:       #ffffff;
+  --shadow-sm:   0 1px 2px rgba(16,22,32,.04), 0 4px 14px rgba(16,22,32,.05);
+  --shadow-md:   0 2px 6px rgba(16,22,32,.06), 0 16px 40px rgba(16,22,32,.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #0c1017;
+    --wash-a:      rgba(70,120,205,.13);
+    --wash-b:      rgba(70,120,205,.07);
+    --surface:     #121821;
+    --surface-2:   #18202a;
+    --ink:         #e8ecf2;
+    --ink-2:       #c3cad4;
+    --muted:       #8b95a3;
+    --border:      #1e2732;
+    --border-2:    #2a3541;
+    --accent:      #84aae0;
+    --accent-2:    #84aae0;
+    --accent-bg:   #14202f;
+    --cta-a:       #1b3a6b;
+    --cta-b:       #1b3a6b;
+    --plate:       #eef1f6;
+    --shadow-sm:   0 1px 2px rgba(0,0,0,.45);
+    --shadow-md:   0 2px 6px rgba(0,0,0,.45), 0 16px 40px rgba(0,0,0,.5);
+  }
+}
