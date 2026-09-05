@@ -2,7 +2,7 @@
 - sort_key: "2026-03"
   current: true
   initials: "NJU"
-  logo: "/assets/img/logos/nju.png"
+  logo: "/assets/img/logos/nju-full.jpeg"
   logo_dark: true   # the official school lockup is white — needs a dark plate
   title:
     en: "World Action Models and Reinforcement Learning for Robot Manipulation"
